@@ -1,5 +1,4 @@
 package com.oops.encapsulation;
-import package1.myClass;
 
 public class Employee {
 //    static int empID = 101;
@@ -9,13 +8,14 @@ public class Employee {
     private int incentive = 500;
     private int phoneNo;
     private String name;
+    private int newBasicSal;
+    private int newIncentive;
 
-
-//     {created private constructor method}
-//     private Employee() {
-//        phoneNo = 123456678;
-//        name = "Pramod";
-//    }
+    //     {created private constructor method}
+    Employee() {
+        phoneNo = 123456678;
+        name = "Pramod";
+    }
 
     Employee(String empName, int phone) {
         phoneNo = phone;
@@ -50,24 +50,34 @@ public class Employee {
     }
 
     // Setter method
+    void setBasicSal(int newBasicSal) {
+        this.basicSal = newBasicSal;
+    }
 
+    void setIncentive(int newIncentive) {
+        this.incentive = newIncentive;
+    }
 
 }
 
 class EmployeeTest {
     public static void main(String[] args) {
         Employee engineer = new Employee("Surya", 12345678);
+
+        engineer.setIncentive(1000);
+        engineer.setBasicSal(30000);
 //        System.out.println(engineer.empID);
         System.out.println(engineer.getBasicSal());
         System.out.println(engineer.getIncentive());
         System.out.println(engineer.getPhoneNo());
         System.out.println(engineer.getName());
 
+
         Employee eng2 = new Employee();
         System.out.println(eng2.getName());
         System.out.println(eng2.getPhoneNo());
 
-//        System.out.println(Employee.empID);    {while using static keyword}
+//        System.out.println(Employee.empID);   // {while using static keyword}
     }
 }
 
